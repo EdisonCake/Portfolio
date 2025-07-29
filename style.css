@@ -1,0 +1,443 @@
+body {
+    font-family: 'Noto Sans', sans-serif;
+    margin: 0;
+    color: #1A1A1A;
+    position: relative;
+    z-index: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* HEADER FIXO */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #1a1a1a;
+    color: white;
+    padding: 16px 32px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* FOTO + TÍTULO LADO ESQUERDO */
+.header-esquerda {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* FOTO DE PERFIL */
+.foto-perfil {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid #F3AACB;
+}
+
+/* TÍTULO */
+header h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+/* MENU DE ABAS */
+.menu-nav button {
+    padding: 8px 14px;
+    max-width: 100%;
+    white-space: nowrap;
+    background-color: #000000;
+    color: #f0f0f0;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.menu-nav button:hover {
+    background-color: #555;
+}
+
+/* CONTEÚDO PRINCIPAL */
+main {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* SISTEMA DE ABAS */
+.aba {
+    display: none;
+}
+
+.aba.ativa {
+    display: block;
+}
+
+/* COMPONENTES BÁSICOS */
+.blocos {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.bloco-info {
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+    text-align: justify;
+}
+
+.bloco-info img {
+    max-width: 15%;
+    border-radius: 50%;
+    border: 2px solid #7cffb1;
+}
+
+.btn-curriculo {
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+}
+
+.btn-curriculo:hover {
+    background-color: #333;
+}
+
+.aba h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.aba p {
+    font-size: 1.1rem;
+    color: #444;
+    margin-bottom: 2rem;
+    text-align: center;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* CONTATO */
+.contato-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.contato-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    border-radius: 10px;
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.contato-badge img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Estilo por plataforma */
+.whatsapp {
+    background-color: #25D366;
+}
+
+.linkedin {
+    background-color: #0e76a8;
+}
+
+.github {
+    background-color: #333;
+}
+
+.gmail {
+    background-color: #D44638;
+}
+
+.outlook {
+    background-color: #0072C6;
+}
+
+.contato-badge:hover {
+    transform: scale(1.05);
+}
+
+/* --- CARDS DA ABA PESSOAL --- */
+.cards-pessoais {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.card-pessoal {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 280px;
+    display: flex;
+    align-items: flex-end;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.card-pessoal .overlay {
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(6px);
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 0;
+    transition: all 0.3s ease;
+}
+
+.conteudo-card {
+    position: relative;
+    z-index: 1;
+    color: white;
+    padding: 20px;
+    font-family: 'Noto Sans', sans-serif;
+    transition: opacity 0.3s ease;
+}
+
+.conteudo-card h3 {
+    margin: 0 0 10px;
+    font-size: 1.4rem;
+}
+
+.conteudo-card p {
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: white;
+    text-align: left;
+}
+
+/* Hover: tira blur e esconde o texto */
+.card-pessoal:hover .overlay {
+    backdrop-filter: none;
+    background-color: transparent;
+}
+
+.card-pessoal:hover .conteudo-card {
+    opacity: 0;
+}
+
+/* Botões do YouTube e Instagram */
+.pessoal-links {
+    margin-top: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+}
+
+.pessoal-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    border-radius: 12px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+}
+
+.pessoal-badge img {
+    width: 24px;
+    height: 24px;
+}
+
+.youtube {
+    background-color: #FF0000;
+}
+
+.instagram {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    color: white;
+}
+
+.pessoal-badge:hover {
+    transform: scale(1.05);
+}
+
+/* BADGES NO RODAPÉ */
+#badges {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #1a1a1a;
+    padding: 8px 16px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    z-index: 999;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+}
+
+#badges img {
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+#badges img:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+/* --- PROJETO DESTAQUE: LOGPROFILER VIEWER --- */
+.projeto-destaque {
+    margin-bottom: 32px;
+}
+
+.projeto-destaque a {
+    text-decoration: none;
+}
+
+.projeto-banner {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.projeto-banner img {
+    width: 96px;
+    height: 96px;
+    flex-shrink: 0;
+}
+
+.projeto-info h3 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: #0d47a1;
+}
+
+.projeto-info p {
+    margin-top: 8px;
+    font-size: 1rem;
+    color: #1a237e;
+    max-width: 600px;
+}
+
+.projeto-banner:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* --- GRID PADRÃO DOS PROJETOS --- */
+.projetos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 24px;
+    margin-top: 20px;
+}
+
+.pasta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    padding: 12px;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    user-select: none;
+}
+
+.pasta img {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 8px;
+}
+
+.pasta span {
+    font-weight: 600;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.pasta:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    background-color: #f0f4ff;
+    color: #1a1a8a;
+}
+
+/* HABILIDADES */
+#habilidades p {
+    text-align: left;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header-esquerda {
+        margin-bottom: 12px;
+    }
+
+    .menu-nav {
+        justify-content: flex-start;
+    }
+
+    .menu-nav button {
+        font-size: 0.9rem;
+        padding: 6px 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .projeto-banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 16px;
+    }
+
+    .projeto-info h3 {
+        font-size: 1.4rem;
+    }
+
+    .projeto-info p {
+        font-size: 0.95rem;
+    }
+
+    .projeto-banner img {
+        width: 72px;
+        height: 72px;
+    }
+}

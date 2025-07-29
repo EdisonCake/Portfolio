@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfólio</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet" />
+</head>
+
+<body>
+    <header>
+        <div class="header-esquerda">
+            <img src="src/images/profile.JPEG" alt="Foto de Perfil" class="foto-perfil" />
+            <h1>Olá! </br> Eu sou o Edison "Cake"!</h1>
+        </div>
+
+        <nav class="menu-nav">
+            <button onclick="mostrarAba('sobre')"> Sobre </button>
+            <button onclick="mostrarAba('habilidades')"> Habilidades </button>
+            <button onclick="mostrarAba('projetos')"> Projetos </button>
+            <button onclick="mostrarAba('contato')"> Contato </button>
+            <button onclick="mostrarAba('pessoal')"> Pessoal </button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="sobre" class="aba ativa">
+
+            <h2>Sobre Mim</h2>
+            <hr>
+
+            <div class="blocos">
+                <div class="bloco-info">
+                    <p>Às vezes, do nada, decido iniciar projetos pessoais só pra ver até onde consigo ir (e quantos
+                        bugs
+                        consigo colecionar no processo). No fundo, é minha forma de aprender, praticar e me superar.
+                    </p>
+
+                    <img src="src/images/square/Cake-Lowpoli.png" alt="Edison N64" style="transform: scaleX(-1);">
+                </div>
+
+                <div class="bloco-info">
+                    <img src="src/images/square/image1.JPG" alt="Notebook ao ar livre">
+
+                    <p>Desde que entrei no universo da programação, nunca fui de esperar o momento “certo” pra
+                        aprender algo
+                        novo. Gosto de explorar, entender como as coisas funcionam e, principalmente, como posso
+                        fazer
+                        diferente. Sempre que posso, mergulho em projetos pessoais — às vezes por necessidade, às
+                        vezes por
+                        impulso criativo — mas sempre com o objetivo de evoluir, descobrir e criar algo que faça
+                        sentido (ou
+                        pelo menos funcione... quase sempre funciona).</p>
+                </div>
+
+                <div class="bloco-info">
+
+                    <p>Minha trajetória mistura código com dança, cosplay com depuração de logs e, claro, muita
+                        persistência.
+                        Gosto de transformar problemas em experiências — e isso se reflete nos projetos que crio do
+                        zero,
+                        testando conceitos, linguagens, ferramentas e até limites (os meus e os do Java). Aprendi
+                        que nem todo
+                        bug é inimigo; muitos deles só querem atenção... ou te ensinar algo no processo.</p>
+
+
+                    <img src="src/images/square/image2.JPEG" alt="Setup 1" style="transform: scaleX(-1);">
+
+                </div>
+
+                <div class="bloco-info">
+
+                    <img src="src/images/square/image3.JPEG" alt="Setup 2">
+
+                    <p>Acredito que tecnologia é uma ponte entre ideias e impacto real. Por isso, não me limito ao
+                        que já sei.
+                        Estou sempre aprendendo, refatorando e buscando formas mais eficientes, criativas e humanas
+                        de resolver
+                        problemas. Se você está lendo isso, saiba: este portfólio não é um ponto final — é um
+                        reflexo vivo de
+                        alguém em constante evolução. E sim, ainda vou inventar moda às 2h da manhã com café na mão
+                        e um projeto
+                        novo no Git.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="habilidades" class="aba">
+            <h2>Habilidades</h2>
+            <hr>
+
+            <h3>Estudos:</h3>
+            <p>Atualmente, estou cursando o primeiro semestre de Análise e Desenvolvimento de Sistemas, na Estácio.</p>
+
+            <p>Em paralelo, estou estudando desenvolvimento web por conta, através de plataformas com certificações
+                válidas, como por exemplo, a CursoEmVideo.com do Gustavo Guanabara.</p>
+
+            <p>Tenho desenvolvido um projeto pessoal-profissional com a ajuda de IA (chatGPT) também.</p>
+
+            <hr>
+
+            <h3>Profissional:</h3>
+            <p>Trabalho atualmente na TOTVS, sendo responsável pela sustentação e manutenção de customizações do
+                Protheus de diversos clientes do território nacional (e internacional)!</p>
+            <p>Atuo com Protheus, AdvPL (pontos de entrada, rotinas customizadas, relatórios personalizados, etc...) e
+                banco de dados (tendo envolvimento com rotinas customizadas também).</p>
+
+            <hr>
+
+            <h3>Gostaria de acessar meu currículo?</h3>
+
+            <a href="src/documents/Curriculo_ptbr_Edison.pdf" target="_blank" download>
+                <button class="btn-curriculo">📄 Curriculo (pt-BR)</button>
+            </a>
+
+            <a href="src/documents/Curriculo_en_Edison.pdf" target="_blank" download>
+                <button class="btn-curriculo">📄 Curriculo (EN)</button>
+            </a>
+
+        </section>
+
+        <section id="projetos" class="aba">
+            <h2>Meus Projetos</h2>
+            <hr><br>
+
+            <p>Abaixo, você pode conferir meus projetos publicados no GitHub!</p>
+            <br>
+
+            <!-- Destaque especial para o projeto principal -->
+            <div class="projeto-destaque">
+                <a href="https://github.com/EdisonCake/LogProfilerViewer" target="_blank" rel="noopener noreferrer">
+                    <div class="projeto-banner">
+                        <img src="https://icons.iconarchive.com/icons/papirus-team/papirus-places/128/folder-blue-git-icon.png"
+                            alt="Ícone do Projeto">
+                        <div class="projeto-info">
+                            <h3>LogProfiler Viewer</h3>
+                            <p>Ferramenta Java Swing feita por mim para leitura e visualização de logs do Protheus com
+                                múltiplas abas, análise de stack e muito mais.</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Grid dos outros projetos -->
+            <div class="projetos-grid">
+                <a href="https://github.com/EdisonCake/Estudos" target="_blank" rel="noopener noreferrer" class="pasta">
+                    <img src="https://icons.iconarchive.com/icons/papirus-team/papirus-places/128/folder-blue-git-icon.png"
+                        alt="Ícone Pasta" />
+                    <span>Estudos</span>
+                </a>
+
+                <a href="https://edisoncake.github.io/projeto-clone-yu-gi-oh/" target="_blank" rel="noopener noreferrer"
+                    class="pasta">
+                    <img src="https://icons.iconarchive.com/icons/papirus-team/papirus-places/128/folder-blue-git-icon.png"
+                        alt="Ícone Pasta" />
+                    <span>Yu-Gi-Oh! Clone</span>
+                </a>
+            </div>
+
+
+            <!-- Pode adicionar mais pastas aqui -->
+            </div>
+        </section>
+
+        <div id="contato" class="aba">
+            <h2>Entre em Contato</h2>
+            <p>Quer bater um papo, colar num projeto ou me chamar pra alguma missão? Manda aí por onde for melhor pra
+                você:</p>
+
+            <div class="contato-links">
+                <a href="https://wa.me/5519984524900" target="_blank" class="contato-badge whatsapp">
+                    <img src="https://cdn-icons-png.flaticon.com/512/174/174879.png" alt="WhatsApp" />
+                    WhatsApp
+                </a>
+
+                <a href="https://www.linkedin.com/in/edisonantonio" target="_blank" class="contato-badge linkedin">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg"
+                        alt="LinkedIn" />
+                    LinkedIn
+                </a>
+
+                <a href="https://github.com/EdisonCake" target="_blank" class="contato-badge github">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                        alt="GitHub" />
+                    GitHub
+                </a>
+
+                <a href="mailto:edisoncake@gmail.com" class="contato-badge gmail">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg"
+                        alt="Gmail" />
+                    Gmail
+                </a>
+
+                <a href="mailto:edison.cake20@outlook.com" class="contato-badge outlook">
+                    <img src="https://img.icons8.com/color/48/000000/microsoft-outlook-2019.png" alt="Outlook" />
+                    Outlook
+                </a>
+            </div>
+        </div>
+
+        <section id="pessoal" class="aba">
+            <h2>Conheça o Lado Pessoal do "Cake" 🎭🎶</h2>
+
+            <div class="cards-pessoais">
+
+                <!-- Cosplay -->
+                <div class="card-pessoal" style="background-image: url('src/images/personal/spider.JPEG')">
+                    <div class="overlay"></div>
+                    <div class="conteudo-card">
+                        <h3>Cosplayer de Miles Morales 🕷️</h3>
+                        <p>Nas horas vagas, sou cosplayer do Miles Morales. Essa paixão surgiu do nada, sempre estive
+                            nos meios de eventos de anime pela região, e sempre vi meus amigos se "transformando" em
+                            seus personagens favoritos. Agora, faço o mesmo.</p>
+                    </div>
+                </div>
+
+                <!-- Just Dance -->
+                <div class="card-pessoal" style="background-image: url('src/images/personal/stage.jpg')">
+                    <div class="overlay"></div>
+                    <div class="conteudo-card">
+                        <h3>Just Dance Squad</h3>
+                        <p>Já fui membro do "Just Dance Squad", antigo grupo oficial da Ubisoft França, na qual reunia
+                            membros da comunidade de Just Dance do mundo todo, dando acesso exclusivo à conteúdos,
+                            novidades, etc.</p>
+                    </div>
+                </div>
+
+                <!-- Lady Gaga -->
+                <div class="card-pessoal" style="background-image: url('src/images/personal/gaga.jpg')">
+                    <div class="overlay"></div>
+                    <div class="conteudo-card">
+                        <h3>De onde vem o "Cake"?</h3>
+                        <p>Como um "LittleMonster" obcecado por Lady Gaga, o apelido surgiu em 2012, com o vazamento de
+                            uma música entitulada "Cake Like Lady Gaga". Basicamente, achei legal, adotei como apelido,
+                            e pegou!</p>
+                    </div>
+                </div>
+
+                <!-- Aviação -->
+                <div class="card-pessoal" style="background-image: url('src/images/personal/aviao.JPEG')">
+                    <div class="overlay"></div>
+                    <div class="conteudo-card">
+                        <h3>Amor por Aviação</h3>
+                        <p>Apaixonado por aviação. Entendo alguma coisa? Não... mas acho fascinante um tubo de metal
+                            voar, apesar de ter asas e não bater elas!</p>
+                    </div>
+                </div>
+
+                <!-- Carros -->
+                <div class="card-pessoal" style="background-image: url('src/images/personal/carros.JPEG')">
+                    <div class="overlay"></div>
+                    <div class="conteudo-card">
+                        <h3>Carros e Adrenalina</h3>
+                        <p>Além dos ares, quando se trata em manter o pé no chão, veículos são minha paixão também.
+                            Lamborghini, Ferrari, Dodge, Hummer, etc... velocidade, luxo, tudo me agrada e arrepia!
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Livros -->
+                <div class="card-pessoal" style="background-image: url('src/images/personal/livros.JPEG')">
+                    <div class="overlay"></div>
+                    <div class="conteudo-card">
+                        <h3>Livros</h3>
+                        <p>Minha passagem pela atual maior rede de livrarias em território nacional me influenciou a ter
+                            um desejo árduo em leitura de ficção científica, suspense, horror, etc...</p>
+                    </div>
+                </div>
+
+                <!-- Jogos -->
+                <div class="card-pessoal" style="background-image: url('src/images/personal/jogos.JPEG')">
+                    <div class="overlay"></div>
+                    <div class="conteudo-card">
+                        <h3>Vamos Jogar?</h3>
+                        <p>Viciado em jogos também! Amante da PlayStation desde criança, e entrando aos poucos no mundo
+                            da Nintendo também.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pessoal-links">
+                <a href="https://www.youtube.com/cakedancebr" target="_blank" class="pessoal-badge youtube">
+                    <img src="https://img.icons8.com/color/48/000000/youtube-play.png" alt="YouTube" />
+                    Meu Canal no YouTube
+                </a>
+
+                <a href="https://www.instagram.com/cakedancebr" target="_blank" class="pessoal-badge instagram">
+                    <img src="https://img.icons8.com/color/48/000000/instagram-new.png" alt="Instagram" />
+                    Meu Instagram
+                </a>
+            </div>
+        </section>
+
+        <div id="badges">
+            <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"
+                alt="HTML5 Logo" />
+            <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"
+                alt="CSS Logo" />
+            <img src="https://img.shields.io/badge/Python-14354C?style=for-the-badge&logo=python&logoColor=white"
+                alt="Python Logo" />
+            <img src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white" alt="C Logo" />
+            <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white"
+                alt="Java Logo" />
+            <img src="https://img.shields.io/badge/AdvPL-003366?style=for-the-badge&logoColor=white" alt="AdvPL Logo" />
+
+        </div>
+    </main>
+
+    <script src="script.js"> </script>
+</body>
+
+</html>
