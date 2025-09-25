@@ -6,7 +6,7 @@
     --text-light: #f5f5f5;
     --accent: #ff4040;
     --card-bg: #1c1f35;
-    --header-height: 85px; /* Altura da navbar para cálculos */
+    --header-height: 85px;
 }
 
 * {
@@ -29,6 +29,10 @@ body {
     flex-direction: column;
 }
 
+body.noscroll {
+    overflow: hidden;
+}
+
 main {
     flex: 1;
     overflow-y: auto;
@@ -47,7 +51,6 @@ main {
     padding: 80px 20px;
 }
 
-/* ===== CORREÇÃO APLICADA AQUI ===== */
 .navbar {
     width: 100%;
     max-width: 1200px;
@@ -57,10 +60,9 @@ main {
     justify-content: space-between;
     align-items: center;
     min-height: var(--header-height);
-    position: relative; /* Necessário para o z-index funcionar */
-    z-index: 1000;      /* Garante que o header fique acima de todo o conteúdo */
+    position: relative;
+    z-index: 1001;
 }
-
 
 .footer {
     display: flex;
@@ -108,8 +110,6 @@ main {
 /* =================================
     4. NAVIGATION (DESKTOP & MOBILE)
     ================================= */
-
-/* --- Desktop Menu --- */
 .menu {
     list-style: none;
     display: flex;
@@ -122,7 +122,6 @@ main {
     font-weight: 500;
 }
 
-/* --- Hamburger Menu Icon (Mobile) --- */
 .hamburger-menu {
     display: none;
     flex-direction: column;
@@ -133,7 +132,7 @@ main {
     border: none;
     cursor: pointer;
     padding: 0;
-    z-index: 10;
+    z-index: 1002;
 }
 
 .hamburger-menu .bar {
@@ -144,7 +143,6 @@ main {
     transition: all 0.3s ease-in-out;
 }
 
-/* Animação do Hamburger para "X" */
 .hamburger-menu.active .bar:nth-child(1) {
     transform: translateY(11px) rotate(45deg);
 }
@@ -493,37 +491,56 @@ span {
     }
 }
 
-@media (min-width: 769px) { /* Usando 769px para evitar sobreposição */
+@media (min-width: 769px) and (max-width: 991px) {
     .cards-pessoais {
         grid-template-columns: repeat(2, 1fr);
     }
+    .skills-grid-habilidades {
+        grid-template-columns: 1fr;
+    }
 }
 
+
 @media (max-width: 768px) {
-    /* --- Estilos do Menu Mobile --- */
+    /* --- Estilos do Menu Mobile Overlay --- */
     .menu {
-        display: none;
-        position: absolute;
-        top: var(--header-height);
+        position: fixed;
+        top: 0;
         left: 0;
         width: 100%;
+        height: 100%;
         flex-direction: column;
+        justify-content: center;
         align-items: center;
-        background-color: var(--card-bg);
-        gap: 0;
+        background-color: rgba(22, 24, 43, 0.98);
+        backdrop-filter: blur(5px);
+        gap: 20px;
+        z-index: 1000;
+
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-20px);
+        transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
     }
+
     .menu.active {
-        display: flex;
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
     }
+
     .menu li {
         width: 100%;
         text-align: center;
     }
+
     .menu a {
         display: block;
-        padding: 20px;
+        padding: 15px;
         width: 100%;
+        font-size: 1.5rem;
     }
+
     .hamburger-menu {
         display: flex;
     }

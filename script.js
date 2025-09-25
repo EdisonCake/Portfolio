@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // ===== LÓGICA DO MENU HAMBURGER =====
+    // ===== LÓGICA DO MENU HAMBURGER ATUALIZADA =====
     const hamburger = document.querySelector('.hamburger-menu');
     const navMenu = document.querySelector('.menu');
     const navLinks = document.querySelectorAll('.menu a');
@@ -75,6 +75,8 @@ document.addEventListener('DOMContentLoaded', () => {
     hamburger.addEventListener('click', () => {
         hamburger.classList.toggle('active');
         navMenu.classList.toggle('active');
+        // Adiciona/remove a classe que bloqueia a rolagem do corpo da página
+        document.body.classList.toggle('noscroll');
     });
 
     // Fecha o menu ao clicar em um link
@@ -82,6 +84,8 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', () => {
             hamburger.classList.remove('active');
             navMenu.classList.remove('active');
+            // Sempre remove a classe de bloqueio ao fechar o menu
+            document.body.classList.remove('noscroll');
         });
     });
 });
