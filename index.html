@@ -22,8 +22,10 @@
             </button>
             <ul class="menu">
                 <li><a href="#" onclick="showSection('home')" data-pt="Home" data-en="Home">Home</a></li>
-                <li><a href="#" onclick="showSection('habilidades')" data-pt="Habilidades" data-en="Skills">Habilidades</a></li>
-                <li><a href="#" onclick="showSection('projetos')" data-pt="Projetos" data-en="Projects">Projetos</a></li>
+                <li><a href="#" onclick="showSection('habilidades')" data-pt="Habilidades"
+                        data-en="Skills">Habilidades</a></li>
+                <li><a href="#" onclick="showSection('projetos')" data-pt="Projetos" data-en="Projects">Projetos</a>
+                </li>
                 <li><a href="#" onclick="showSection('pessoal')" data-pt="Pessoal" data-en="Personal">Pessoal</a></li>
                 <li><a href="#" onclick="showSection('contato')" data-pt="Contato" data-en="Contact">Contato</a></li>
             </ul>
@@ -42,7 +44,7 @@
                         Olá! Eu sou o <span>Edison</span>!<br>Mas pode me chamar de <br><span>Cake</span>!
                     </h1>
                     <p data-pt="Sou um desenvolvedor de software, atualmente trabalhando com desenvolvimento e sustentação de customizações para o ERP Protheus e outros projetos pessoais que você pode conferir neste website!"
-                       data-en="I am a software developer, currently working with development and maintenance of customizations for the Protheus ERP and other personal projects that you can check on this website!">
+                        data-en="I am a software developer, currently working with development and maintenance of customizations for the Protheus ERP and other personal projects that you can check on this website!">
                         Sou um desenvolvedor de software, atualmente trabalhando com desenvolvimento e sustentação de
                         customizações para o ERP Protheus e outros projetos pessoais que você pode conferir neste
                         website!
@@ -59,40 +61,38 @@
                 <div class="card">
                     <h3 data-pt="Estudos" data-en="Studies">Estudos</h3>
                     <p data-pt="Atualmente, estou cursando o primeiro semestre de Análise e Desenvolvimento de Sistemas, na Estácio."
-                       data-en="Currently, I am studying the first semester of Systems Analysis and Development at Estácio.">
+                        data-en="Currently, I am studying the first semester of Systems Analysis and Development at Estácio.">
                         Atualmente, estou cursando o primeiro semestre de Análise e Desenvolvimento de Sistemas, na
                         Estácio.</p>
                     <p data-pt="Em paralelo, estou estudando desenvolvimento web por conta, através de plataformas com certificações válidas, como CursoEmVideo.com do Gustavo Guanabara."
-                       data-en="In parallel, I am learning web development on my own, through platforms with valid certifications, like CursoEmVideo.com by Gustavo Guanabara.">
+                        data-en="In parallel, I am learning web development on my own, through platforms with valid certifications, like CursoEmVideo.com by Gustavo Guanabara.">
                         Em paralelo, estou estudando desenvolvimento web por conta, através de plataformas com
                         certificações válidas, como CursoEmVideo.com do Gustavo Guanabara.</p>
                     <p data-pt="Tenho desenvolvido um projeto pessoal-profissional com a ajuda de IA (chatGPT) também."
-                       data-en="I have been developing a personal-professional project with AI (ChatGPT) assistance as well.">
+                        data-en="I have been developing a personal-professional project with AI (ChatGPT) assistance as well.">
                         Tenho desenvolvido um projeto pessoal-profissional com a ajuda de IA (chatGPT) também.</p>
                 </div>
                 <div class="card">
                     <h3 data-pt="Profissional" data-en="Professional">Profissional</h3>
                     <p data-pt="Trabalho atualmente na TOTVS, sendo responsável pela sustentação e manutenção de customizações do Protheus de diversos clientes do território nacional (e internacional)!"
-                       data-en="I currently work at TOTVS, responsible for supporting and maintaining Protheus customizations for various clients nationally (and internationally)!">
+                        data-en="I currently work at TOTVS, responsible for supporting and maintaining Protheus customizations for various clients nationally (and internationally)!">
                         Trabalho atualmente na TOTVS, sendo responsável pela sustentação e manutenção de customizações
                         do Protheus de diversos clientes do território nacional (e internacional)!</p>
                     <p data-pt="Atuo com Protheus, AdvPL (pontos de entrada, rotinas customizadas, relatórios personalizados, etc...) e banco de dados."
-                       data-en="I work with Protheus, AdvPL (entry points, custom routines, personalized reports, etc...) and databases.">
+                        data-en="I work with Protheus, AdvPL (entry points, custom routines, personalized reports, etc...) and databases.">
                         Atuo com Protheus, AdvPL (pontos de entrada, rotinas customizadas, relatórios personalizados,
                         etc...) e banco de dados.</p>
                 </div>
                 <div class="card card-curriculo">
                     <h3 data-pt="Currículo" data-en="Resume">Currículo</h3>
                     <p data-pt="Gostaria de acessar meu currículo? Escolha abaixo:"
-                       data-en="Want to access my resume? Choose below:">Gostaria de acessar meu currículo? Escolha
+                        data-en="Want to access my resume? Choose below:">Gostaria de acessar meu currículo? Escolha
                         abaixo:</p>
                     <a href="src/documents/Curriculo_ptbr_Edison.pdf" target="_blank" download>
-                        <button class="btn-curriculo" type="button" data-pt="📄 Currículo (pt-BR)"
-                            data-en="📄 Resume (pt-BR)">📄 Currículo (pt-BR)</button>
+                        <button id="btn-resume-pt" class="btn-curriculo" type="button">📄 Currículo (pt-BR)</button>
                     </a>
                     <a href="src/documents/Curriculo_en_Edison.pdf" target="_blank" download>
-                        <button class="btn-curriculo" type="button" data-pt="📄 Currículo (EN)"
-                            data-en="📄 Resume (EN)">📄 Currículo (EN)</button>
+                        <button id="btn-resume-en" class="btn-curriculo" type="button">📄 Currículo (EN)</button>
                     </a>
                 </div>
             </div>
@@ -107,7 +107,7 @@
                     <h3 data-pt="LogProfilerViewer 5.0" data-en="LogProfilerViewer 5.0">LogProfilerViewer 5.0 <span
                             class="badge" data-pt="Novidade!" data-en="New!">Novidade!</span></h3>
                     <p data-pt="Versão 'The FlatLaf Upgrade' com interface moderna, suporte a múltiplas threads e análise avançada de logs do Protheus."
-                       data-en="The 'FlatLaf Upgrade' version with modern interface, multi-thread support, and advanced Protheus log analysis.">
+                        data-en="The 'FlatLaf Upgrade' version with modern interface, multi-thread support, and advanced Protheus log analysis.">
                         Versão "The FlatLaf Upgrade" com interface moderna, suporte a múltiplas threads e análise
                         avançada de logs do Protheus.</p>
                     <a href="https://github.com/EdisonCake/LogProfilerViewer" target="_blank">
@@ -205,7 +205,8 @@
                     <div class="overlay"></div>
                     <div class="conteudo-card">
                         <h3 data-pt="Amor por <span>Aviação</span>" data-en="A love for <span>Aviation</span>">Amor por
-                            <span>Aviação</span></h3>
+                            <span>Aviação</span>
+                        </h3>
                         <p data-pt="Apaixonado por aviação. Entendo alguma coisa? Não... mas acho fascinante um tubo de metal voar, apesar de ter asas e não bater elas!"
                             data-en="Passionate about aviation. Do I understand anything about it? No... but I find it fascinating that a metal tube can fly, despite having wings and not flapping them!">
                         </p>
@@ -217,7 +218,8 @@
                     <div class="overlay"></div>
                     <div class="conteudo-card">
                         <h3 data-pt="<span>Carros</span> e Adrenalina" data-en="<span>Cars</span> and Adrenaline">
-                            <span>Carros</span> e Adrenalina</h3>
+                            <span>Carros</span> e Adrenalina
+                        </h3>
                         <p data-pt="Além dos ares, quando se trata em manter o pé no chão, veículos são minha paixão também. Lamborghini, Ferrari, Dodge, Hummer, etc... velocidade, luxo, tudo me agrada e arrepia!"
                             data-en="Besides the skies, when it comes to keeping my feet on the ground, vehicles are also my passion. Lamborghini, Ferrari, Dodge, Hummer, etc... speed, luxury, it all pleases and thrills me!">
                         </p>
@@ -241,7 +243,8 @@
                     <div class="overlay"></div>
                     <div class="conteudo-card">
                         <h3 data-pt="Vamos <span>Jogar</span>?" data-en="Let's <span>Play</span>?">Vamos
-                            <span>Jogar</span>?</h3>
+                            <span>Jogar</span>?
+                        </h3>
                         <p data-pt="Viciado em jogos também! Amante da PlayStation desde criança, e entrando aos poucos no mundo da Nintendo também."
                             data-en="Addicted to games too! A PlayStation lover since I was a kid, and slowly getting into the world of Nintendo as well.">
                         </p>
@@ -251,7 +254,8 @@
             <div class="pessoal-links">
                 <a href="https://www.youtube.com/cakedancebr" target="_blank" class="pessoal-badge youtube"
                     data-pt="Meu Canal no YouTube" data-en="My YouTube Channel">
-                    <img src="https://img.icons8.com/color/48/000000/youtube-play.png" alt="YouTube" /> Meu Canal no YouTube
+                    <img src="https://img.icons8.com/color/48/000000/youtube-play.png" alt="YouTube" /> Meu Canal no
+                    YouTube
                 </a>
                 <a href="https://www.instagram.com/cakedancebr" target="_blank" class="pessoal-badge instagram"
                     data-pt="Meu Instagram" data-en="My Instagram">
@@ -265,7 +269,7 @@
                 <span>Contato</span>
             </h2>
             <p data-pt="Quer bater um papo, colar num projeto ou me chamar pra alguma missão? Manda aí por onde for melhor pra você:"
-               data-en="Want to chat, join a project, or invite me for a mission? Contact me wherever is best for you:">
+                data-en="Want to chat, join a project, or invite me for a mission? Contact me wherever is best for you:">
                 Quer bater um papo, colar num projeto ou me chamar pra alguma missão? Manda aí por onde for melhor pra
                 você:</p>
 

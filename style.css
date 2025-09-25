@@ -132,6 +132,7 @@ main {
     border: none;
     cursor: pointer;
     padding: 0;
+    position: relative; /* ADICIONADO: Para ativar o z-index */
     z-index: 1002;
 }
 
@@ -550,6 +551,12 @@ span {
     .cards-pessoais {
         grid-template-columns: 1fr;
     }
+
+    section#pessoal {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
     .hero-content {
         flex-direction: column;
         text-align: center;
@@ -576,5 +583,24 @@ span {
     }
     .footer-left, .footer-right {
         justify-content: center;
+    }
+
+    /* EFEITO DE TOQUE PARA CARDS PESSOAIS */
+    .card-pessoal.is-active-mobile {
+        transform: scale(1.04);
+    }
+    .card-pessoal.is-active-mobile::before {
+        opacity: 1;
+    }
+    .card-pessoal.is-active-mobile .overlay {
+        background: linear-gradient(to top, rgba(0, 0, 0, 1) 20%, transparent 80%);
+    }
+    .card-pessoal.is-active-mobile p {
+        opacity: 1;
+        transform: translateY(0);
+        max-height: 1000px;
+    }
+    .card-pessoal, .card-pessoal::before, .card-pessoal .overlay, .card-pessoal p {
+        transition: all 0.4s ease-in-out;
     }
 }

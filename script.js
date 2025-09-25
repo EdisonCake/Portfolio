@@ -17,30 +17,28 @@ function showSection(sectionId) {
 }
 
 function setLanguage(lang) {
+    // 1. Traduz todos os elementos genéricos
     document.querySelectorAll('[data-pt]').forEach(el => {
         const text = el.getAttribute(`data-${lang}`);
         if (text) {
-            if ((el.tagName === 'A' || el.tagName === 'BUTTON') && el.children.length > 0) {
-                 const childNodes = Array.from(el.childNodes);
-                 const textNode = childNodes.find(node => node.nodeType === Node.TEXT_NODE && node.textContent.trim() !== '');
-                 if (textNode) {
-                    textNode.textContent = text;
-                 }
-            } else {
-                 el.innerHTML = text;
-            }
+            el.innerHTML = text;
         }
     });
 
-     const btnPt = document.querySelector('a[href*="ptbr"] button');
-     const btnEn = document.querySelector('a[href*="en"] button');
-     if(lang === 'pt') {
-        btnPt.textContent = "📄 Currículo (pt-BR)";
-        btnEn.textContent = "📄 Currículo (EN)";
-     } else {
-        btnPt.textContent = "📄 Resume (pt-BR)";
-        btnEn.textContent = "📄 Resume (EN)";
-     }
+    // 2. Lógica específica e à prova de falhas para os botões de currículo usando IDs
+    const btnResumePT = document.getElementById('btn-resume-pt');
+    const btnResumeEN = document.getElementById('btn-resume-en');
+
+    // Verifica se os botões existem antes de tentar alterá-los
+    if (btnResumePT && btnResumeEN) {
+        if (lang === 'pt') {
+            btnResumePT.innerHTML = "📄 Currículo (pt-BR)";
+            btnResumeEN.innerHTML = "📄 Currículo (EN)";
+        } else { // lang === 'en'
+            btnResumePT.innerHTML = "📄 Resume (pt-BR)";
+            btnResumeEN.innerHTML = "📄 Resume (EN)";
+        }
+    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -67,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // ===== LÓGICA DO MENU HAMBURGER ATUALIZADA =====
+    // Lógica do Menu Hamburger
     const hamburger = document.querySelector('.hamburger-menu');
     const navMenu = document.querySelector('.menu');
     const navLinks = document.querySelectorAll('.menu a');
@@ -75,17 +73,28 @@ document.addEventListener('DOMContentLoaded', () => {
     hamburger.addEventListener('click', () => {
         hamburger.classList.toggle('active');
         navMenu.classList.toggle('active');
-        // Adiciona/remove a classe que bloqueia a rolagem do corpo da página
         document.body.classList.toggle('noscroll');
     });
 
-    // Fecha o menu ao clicar em um link
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             hamburger.classList.remove('active');
             navMenu.classList.remove('active');
-            // Sempre remove a classe de bloqueio ao fechar o menu
             document.body.classList.remove('noscroll');
+        });
+    });
+
+    // Lógica de toque nos cards pessoais (Mobile)
+    personalCards.forEach(clickedCard => {
+        clickedCard.addEventListener('click', () => {
+            if (window.matchMedia('(hover: none)').matches) {
+                personalCards.forEach(otherCard => {
+                    if (otherCard !== clickedCard) {
+                        otherCard.classList.remove('is-active-mobile');
+                    }
+                });
+                clickedCard.classList.toggle('is-active-mobile');
+            }
         });
     });
 });
