@@ -47,6 +47,7 @@ main {
     padding: 80px 20px;
 }
 
+/* ===== CORREÇÃO APLICADA AQUI ===== */
 .navbar {
     width: 100%;
     max-width: 1200px;
@@ -56,7 +57,10 @@ main {
     justify-content: space-between;
     align-items: center;
     min-height: var(--header-height);
+    position: relative; /* Necessário para o z-index funcionar */
+    z-index: 1000;      /* Garante que o header fique acima de todo o conteúdo */
 }
+
 
 .footer {
     display: flex;
@@ -140,6 +144,7 @@ main {
     transition: all 0.3s ease-in-out;
 }
 
+/* Animação do Hamburger para "X" */
 .hamburger-menu.active .bar:nth-child(1) {
     transform: translateY(11px) rotate(45deg);
 }
@@ -311,30 +316,13 @@ section#pessoal {
     text-align: center;
 }
 
-/* ===== CORREÇÃO DO GRID PESSOAL APLICADA AQUI ===== */
 .cards-pessoais {
     display: grid;
-    gap: 25px; /* Aumentado o espaçamento para ficar melhor */
+    gap: 25px;
     margin: 20px auto;
-    grid-template-columns: 1fr; /* Padrão mobile: 1 coluna */
+    grid-template-columns: 1fr;
     max-width: 1100px;
 }
-
-/* Grid para tablets */
-@media (min-width: 768px) {
-    .cards-pessoais {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* Grid para desktops (3x3) */
-@media (min-width: 992px) {
-    .cards-pessoais {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-/* ===== FIM DA CORREÇÃO ===== */
-
 
 .card-pessoal {
     position: relative;
@@ -498,12 +486,16 @@ span {
 /* =================================
     9. RESPONSIVENESS
     ================================= */
-@media (max-width: 992px) {
-    .skills-grid-habilidades {
-        grid-template-columns: 1fr;
+
+@media (min-width: 992px) {
+    .cards-pessoais {
+        grid-template-columns: repeat(3, 1fr);
     }
-    .card-curriculo {
-        grid-column: auto;
+}
+
+@media (min-width: 769px) { /* Usando 769px para evitar sobreposição */
+    .cards-pessoais {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -537,6 +529,10 @@ span {
     }
 
     /* --- Outros Ajustes --- */
+    .skills-grid-habilidades,
+    .cards-pessoais {
+        grid-template-columns: 1fr;
+    }
     .hero-content {
         flex-direction: column;
         text-align: center;
