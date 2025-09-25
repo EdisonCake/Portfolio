@@ -132,7 +132,7 @@ main {
     border: none;
     cursor: pointer;
     padding: 0;
-    position: relative; /* ADICIONADO: Para ativar o z-index */
+    position: relative;
     z-index: 1002;
 }
 
@@ -551,10 +551,13 @@ span {
     .cards-pessoais {
         grid-template-columns: 1fr;
     }
-
-    section#pessoal {
-        padding-left: 15px;
-        padding-right: 15px;
+    
+    /* ===== AJUSTE DE PADDING E MARGEM PARA MOBILE ===== */
+    .skills, .projetos, .contato, .pessoal {
+        padding: 60px 15px; /* Reduz o padding lateral para evitar overflow */
+    }
+    .card {
+        padding: 25px; /* Reduz o padding interno dos cards */
     }
     
     .hero-content {
@@ -578,12 +581,23 @@ span {
         width: 90%;
         justify-content: center;
     }
+
+    /* ===== AJUSTE DO RODAPÉ MOBILE ===== */
     .footer {
         flex-direction: column;
+        padding: 25px 15px; /* Reduz padding */
+        gap: 20px; /* Reduz espaçamento entre seções */
     }
-    .footer-left, .footer-right {
+    .footer-left {
+        display: flex;
+        flex-wrap: wrap; /* Permite que os ícones quebrem a linha */
         justify-content: center;
+        gap: 5px; /* Espaçamento entre ícones */
     }
+    .footer-left img {
+        height: 22px; /* Diminui o tamanho dos ícones */
+    }
+    
 
     /* EFEITO DE TOQUE PARA CARDS PESSOAIS */
     .card-pessoal.is-active-mobile {
