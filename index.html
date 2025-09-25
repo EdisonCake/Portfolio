@@ -2,197 +2,284 @@
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8" />
-    <!-- Meta viewport único e correto -->
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Portfólio</title>
-
-    <link rel="stylesheet" href="style.css" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Portfólio do Edison!</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 
-
 <body>
-    <header>
-        <div class="header-esquerda">
-            <img src="src/images/profile.JPEG" alt="Foto de Perfil" class="foto-perfil" />
-            <!-- Usei <br /> correto e deixei texto num flow natural -->
-            <h1>Olá!<br />Eu sou o Edison "Cake"!</h1>
-        </div>
-
-        <nav class="menu-nav" role="navigation" aria-label="Menu de navegação principal">
-            <!-- Botões com type="button" para evitar submit acidental -->
-            <button type="button" onclick="mostrarAba('sobre')">Sobre</button>
-            <button type="button" onclick="mostrarAba('habilidades')">Habilidades</button>
-            <button type="button" onclick="mostrarAba('projetos')">Projetos</button>
-            <button type="button" onclick="mostrarAba('contato')">Contato</button>
-            <button type="button" onclick="mostrarAba('pessoal')">Pessoal</button>
+    <header class="navbar">
+        <div class="logo">EdisonCake<span>®</span></div>
+        <nav class="nav-links">
+            <button class="hamburger-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="menu">
+                <li><a href="#" onclick="showSection('home')" data-pt="Home" data-en="Home">Home</a></li>
+                <li><a href="#" onclick="showSection('habilidades')" data-pt="Habilidades" data-en="Skills">Habilidades</a></li>
+                <li><a href="#" onclick="showSection('projetos')" data-pt="Projetos" data-en="Projects">Projetos</a></li>
+                <li><a href="#" onclick="showSection('pessoal')" data-pt="Pessoal" data-en="Personal">Pessoal</a></li>
+                <li><a href="#" onclick="showSection('contato')" data-pt="Contato" data-en="Contact">Contato</a></li>
+            </ul>
         </nav>
     </header>
 
     <main>
-        <section id="sobre" class="aba ativa">
-            <h2>Sobre Mim</h2>
-            <hr />
-            <div class="blocos">
-                <div class="bloco-info">
-                    <p>Às vezes, do nada, decido iniciar projetos pessoais só pra ver até onde consigo ir (e quantos
-                        bugs
-                        consigo colecionar no processo). No fundo, é minha forma de aprender, praticar e me superar.
+        <section class="aba hero" id="home">
+            <div class="hero-content">
+                <div class="hero-image">
+                    <img class="image-profile" src="src/images/profile.JPEG" alt="Edison Cake">
+                </div>
+                <div class="hero-text">
+                    <h1 data-pt="Olá! Eu sou o <span>Edison</span>!<br>Mas pode me chamar de <br><span>Cake</span>!"
+                        data-en="Hi! I am <span>Edison</span>!<br>You can call me <br><span>Cake</span>!">
+                        Olá! Eu sou o <span>Edison</span>!<br>Mas pode me chamar de <br><span>Cake</span>!
+                    </h1>
+                    <p data-pt="Sou um desenvolvedor de software, atualmente trabalhando com desenvolvimento e sustentação de customizações para o ERP Protheus e outros projetos pessoais que você pode conferir neste website!"
+                       data-en="I am a software developer, currently working with development and maintenance of customizations for the Protheus ERP and other personal projects that you can check on this website!">
+                        Sou um desenvolvedor de software, atualmente trabalhando com desenvolvimento e sustentação de
+                        customizações para o ERP Protheus e outros projetos pessoais que você pode conferir neste
+                        website!
                     </p>
-                    <img src="src/images/square/Cake-Lowpoli.png" alt="Edison N64" style="transform: scaleX(-1);" />
-                </div>
-
-                <div class="bloco-info">
-                    <img src="src/images/square/image1.JPG" alt="Notebook ao ar livre" />
-                    <p>Desde que entrei no universo da programação, nunca fui de esperar o momento “certo” pra
-                        aprender algo
-                        novo. Gosto de explorar, entender como as coisas funcionam e, principalmente, como posso
-                        fazer
-                        diferente. Sempre que posso, mergulho em projetos pessoais — às vezes por necessidade, às
-                        vezes por
-                        impulso criativo — mas sempre com o objetivo de evoluir, descobrir e criar algo que faça
-                        sentido (ou
-                        pelo menos funcione... quase sempre funciona).</p>
-                </div>
-
-                <div class="bloco-info">
-                    <p>Minha trajetória mistura código com dança, cosplay com depuração de logs e, claro, muita
-                        persistência.
-                        Gosto de transformar problemas em experiências — e isso se reflete nos projetos que crio do
-                        zero,
-                        testando conceitos, linguagens, ferramentas e até limites (os meus e os do Java). Aprendi
-                        que nem todo
-                        bug é inimigo; muitos deles só querem atenção... ou te ensinar algo no processo.</p>
-                    <img src="src/images/square/image2.JPEG" alt="Setup 1" style="transform: scaleX(-1);" />
-                </div>
-
-                <div class="bloco-info">
-                    <img src="src/images/square/image3.JPEG" alt="Setup 2" />
-                    <p>Acredito que tecnologia é uma ponte entre ideias e impacto real. Por isso, não me limito ao
-                        que já sei.
-                        Estou sempre aprendendo, refatorando e buscando formas mais eficientes, criativas e humanas
-                        de resolver
-                        problemas. Se você está lendo isso, saiba: este portfólio não é um ponto final — é um
-                        reflexo vivo de
-                        alguém em constante evolução. E sim, ainda vou inventar moda às 2h da manhã com café na mão
-                        e um projeto
-                        novo no Git.</p>
                 </div>
             </div>
         </section>
 
-        <section id="habilidades" class="aba">
-            <h2>Habilidades</h2>
-            <hr />
-            <h3>Estudos:</h3>
-            <p>Atualmente, estou cursando o primeiro semestre de Análise e Desenvolvimento de Sistemas, na Estácio.</p>
-
-            <p>Em paralelo, estou estudando desenvolvimento web por conta, através de plataformas com certificações
-                válidas, como por exemplo, a CursoEmVideo.com do Gustavo Guanabara.</p>
-
-            <p>Tenho desenvolvido um projeto pessoal-profissional com a ajuda de IA (chatGPT) também.</p>
-
-            <hr />
-            <h3>Profissional:</h3>
-            <p>Trabalho atualmente na TOTVS, sendo responsável pela sustentação e manutenção de customizações do
-                Protheus de diversos clientes do território nacional (e internacional)!</p>
-            <p>Atuo com Protheus, AdvPL (pontos de entrada, rotinas customizadas, relatórios personalizados, etc...) e
-                banco de dados (tendo envolvimento com rotinas customizadas também).</p>
-
-            <hr />
-            <h3>Gostaria de acessar meu currículo?</h3>
-            <a href="src/documents/Curriculo_ptbr_Edison.pdf" target="_blank" download>
-                <button class="btn-curriculo" type="button">📄 Currículo (pt-BR)</button>
-            </a>
-
-            <a href="src/documents/Curriculo_en_Edison.pdf" target="_blank" download>
-                <button class="btn-curriculo" type="button">📄 Currículo (EN)</button>
-            </a>
+        <section class="aba skills" id="habilidades">
+            <h2 data-pt="Portfólio: <span>Skill-Set</span>" data-en="Portfolio: <span>Skill-Set</span>">Portfólio:
+                <span>Skill-Set</span>
+            </h2>
+            <div class="skills-grid-habilidades">
+                <div class="card">
+                    <h3 data-pt="Estudos" data-en="Studies">Estudos</h3>
+                    <p data-pt="Atualmente, estou cursando o primeiro semestre de Análise e Desenvolvimento de Sistemas, na Estácio."
+                       data-en="Currently, I am studying the first semester of Systems Analysis and Development at Estácio.">
+                        Atualmente, estou cursando o primeiro semestre de Análise e Desenvolvimento de Sistemas, na
+                        Estácio.</p>
+                    <p data-pt="Em paralelo, estou estudando desenvolvimento web por conta, através de plataformas com certificações válidas, como CursoEmVideo.com do Gustavo Guanabara."
+                       data-en="In parallel, I am learning web development on my own, through platforms with valid certifications, like CursoEmVideo.com by Gustavo Guanabara.">
+                        Em paralelo, estou estudando desenvolvimento web por conta, através de plataformas com
+                        certificações válidas, como CursoEmVideo.com do Gustavo Guanabara.</p>
+                    <p data-pt="Tenho desenvolvido um projeto pessoal-profissional com a ajuda de IA (chatGPT) também."
+                       data-en="I have been developing a personal-professional project with AI (ChatGPT) assistance as well.">
+                        Tenho desenvolvido um projeto pessoal-profissional com a ajuda de IA (chatGPT) também.</p>
+                </div>
+                <div class="card">
+                    <h3 data-pt="Profissional" data-en="Professional">Profissional</h3>
+                    <p data-pt="Trabalho atualmente na TOTVS, sendo responsável pela sustentação e manutenção de customizações do Protheus de diversos clientes do território nacional (e internacional)!"
+                       data-en="I currently work at TOTVS, responsible for supporting and maintaining Protheus customizations for various clients nationally (and internationally)!">
+                        Trabalho atualmente na TOTVS, sendo responsável pela sustentação e manutenção de customizações
+                        do Protheus de diversos clientes do território nacional (e internacional)!</p>
+                    <p data-pt="Atuo com Protheus, AdvPL (pontos de entrada, rotinas customizadas, relatórios personalizados, etc...) e banco de dados."
+                       data-en="I work with Protheus, AdvPL (entry points, custom routines, personalized reports, etc...) and databases.">
+                        Atuo com Protheus, AdvPL (pontos de entrada, rotinas customizadas, relatórios personalizados,
+                        etc...) e banco de dados.</p>
+                </div>
+                <div class="card card-curriculo">
+                    <h3 data-pt="Currículo" data-en="Resume">Currículo</h3>
+                    <p data-pt="Gostaria de acessar meu currículo? Escolha abaixo:"
+                       data-en="Want to access my resume? Choose below:">Gostaria de acessar meu currículo? Escolha
+                        abaixo:</p>
+                    <a href="src/documents/Curriculo_ptbr_Edison.pdf" target="_blank" download>
+                        <button class="btn-curriculo" type="button" data-pt="📄 Currículo (pt-BR)"
+                            data-en="📄 Resume (pt-BR)">📄 Currículo (pt-BR)</button>
+                    </a>
+                    <a href="src/documents/Curriculo_en_Edison.pdf" target="_blank" download>
+                        <button class="btn-curriculo" type="button" data-pt="📄 Currículo (EN)"
+                            data-en="📄 Resume (EN)">📄 Currículo (EN)</button>
+                    </a>
+                </div>
+            </div>
         </section>
 
-        <section id="projetos" class="aba">
-            <h2>Meus Projetos</h2>
-            <hr />
-            <p>Abaixo, você pode conferir meus projetos publicados no GitHub!</p>
+        <section class="aba projetos" id="projetos">
+            <h2 data-pt="Portfólio: <span>Projetos</span>" data-en="Portfolio: <span>Projects</span>">Portfólio:
+                <span>Projetos</span>
+            </h2>
+            <div class="skills-grid-featured">
+                <div class="card card-featured">
+                    <h3 data-pt="LogProfilerViewer 5.0" data-en="LogProfilerViewer 5.0">LogProfilerViewer 5.0 <span
+                            class="badge" data-pt="Novidade!" data-en="New!">Novidade!</span></h3>
+                    <p data-pt="Versão 'The FlatLaf Upgrade' com interface moderna, suporte a múltiplas threads e análise avançada de logs do Protheus."
+                       data-en="The 'FlatLaf Upgrade' version with modern interface, multi-thread support, and advanced Protheus log analysis.">
+                        Versão "The FlatLaf Upgrade" com interface moderna, suporte a múltiplas threads e análise
+                        avançada de logs do Protheus.</p>
+                    <a href="https://github.com/EdisonCake/LogProfilerViewer" target="_blank">
+                        <button class="btn-curriculo" data-pt="Ver Projeto" data-en="View Project">Ver Projeto</button>
+                    </a>
+                </div>
+            </div>
 
-            <!-- Destaque especial para o projeto principal -->
-            <div class="projeto-destaque">
-                <a href="https://github.com/EdisonCake/LogProfilerViewer" target="_blank" rel="noopener noreferrer">
-                    <div class="projeto-banner">
-                        <img src="https://icons.iconarchive.com/icons/papirus-team/papirus-places/128/folder-blue-git-icon.png"
-                            alt="Ícone do Projeto" />
-                        <div class="projeto-info">
-                            <h3>LogProfiler Viewer (Java Version)</h3>
-                            <p>Ferramenta Java Swing feita por mim para leitura e visualização de logs do Protheus com
-                                múltiplas abas, análise de stack e muito mais.</p>
-                        </div>
+            <br>
+            <hr><br>
+
+            <div class="skills-grid-habilidades">
+                <div class="card">
+                    <h3 data-pt="Estudos - AdvPL" data-en="Studies - AdvPL">Estudos - AdvPL</h3>
+                    <p data-pt="Projetos de estudo em AdvPL (TOTVS Protheus)."
+                        data-en="Study projects in AdvPL (TOTVS Protheus)."></p>
+                    <p><a href="https://github.com/EdisonCake/Estudos-AdvPL" target="_blank" data-pt="Ver no GitHub"
+                            data-en="View on GitHub">Ver no GitHub</a></p>
+                </div>
+                <div class="card">
+                    <h3 data-pt="Estudos - C" data-en="Studies - C">Estudos - C</h3>
+                    <p data-pt="Projetos de estudo em C." data-en="Study projects in C."></p>
+                    <p><a href="https://github.com/EdisonCake/Estudos-C" target="_blank" data-pt="Ver no GitHub"
+                            data-en="View on GitHub">Ver no GitHub</a></p>
+                </div>
+                <div class="card">
+                    <h3 data-pt="Estudos - HTML, CSS e JS" data-en="Studies - HTML, CSS & JS">Estudos - HTML, CSS e JS
+                    </h3>
+                    <p data-pt="Projetos de estudos em HTML, CSS e JavaScript."
+                        data-en="Study projects in HTML, CSS, and JavaScript."></p>
+                    <p><a href="https://github.com/EdisonCake/Estudos-HTML-CSS-Javascript" target="_blank"
+                            data-pt="Ver no GitHub" data-en="View on GitHub">Ver no GitHub</a></p>
+                </div>
+                <div class="card">
+                    <h3 data-pt="Estudos - Python" data-en="Studies - Python">Estudos - Python</h3>
+                    <p data-pt="Projetos de estudos em Python." data-en="Study projects in Python."></p>
+                    <p><a href="https://github.com/EdisonCake/Estudos-Python" target="_blank" data-pt="Ver no GitHub"
+                            data-en="View on GitHub">Ver no GitHub</a></p>
+                </div>
+                <div class="card">
+                    <h3>Rocketseat - Yu-Gi-Oh!</h3>
+                    <p data-pt="Projeto realizado na trilha de ensino da RocketSeat, reproduzindo cartas de Yu-Gi-Oh!."
+                        data-en="Project from the RocketSeat learning track, recreating Yu-Gi-Oh! cards."></p>
+                    <p><a href="https://edisoncake.github.io/projeto-clone-yu-gi-oh/" target="_blank"
+                            data-pt="Ver Online" data-en="View Online">Ver Online</a></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="pessoal" class="aba">
+            <h2 data-pt="Conheça o <span>lado pessoal</span> do Cake:"
+                data-en="Get to know the <span>personal side</span> of Cake:">Conheça o <span>lado pessoal</span> do
+                Cake:</h2>
+            <div class="cards-pessoais">
+
+                <div class="card-pessoal" style="background-image: url('src/images/personal/spider.JPEG')"
+                    data-hover-image="url('src/images/personal/spider-hover.jpg')">
+                    <div class="overlay"></div>
+                    <div class="conteudo-card">
+                        <h3 data-pt="Cosplayer de <span>Miles Morales</span> 🕷️"
+                            data-en="<span>Miles Morales</span> Cosplayer 🕷️">Cosplayer de <span>Miles Morales</span>
+                            🕷️</h3>
+                        <p data-pt="Nas horas vagas, sou cosplayer do Miles Morales. Essa paixão surgiu do nada, sempre estive nos meios de eventos de anime pela região, e sempre vi meus amigos se 'transformando' em seus personagens favoritos. Agora, faço o mesmo."
+                            data-en="In my spare time, I'm a Miles Morales cosplayer. This passion came out of nowhere, I was always around anime events in the region, and I always saw my friends 'transforming' into their favorite characters. Now, I do the same.">
+                        </p>
                     </div>
-                </a>
+                </div>
+
+                <div class="card-pessoal" style="background-image: url('src/images/personal/stage.jpg')"
+                    data-hover-image="url('src/images/personal/stage-hover.jpg')">
+                    <div class="overlay"></div>
+                    <div class="conteudo-card">
+                        <h3 data-pt="<span>Just Dance</span> Squad" data-en="<span>Just Dance</span> Squad"><span>Just
+                                Dance</span> Squad</h3>
+                        <p data-pt="Já fui membro do 'Just Dance Squad', antigo grupo oficial da Ubisoft França, na qual reunia membros da comunidade de Just Dance do mundo todo, dando acesso exclusivo à conteúdos, novidades, etc."
+                            data-en="I was a member of the 'Just Dance Squad', a former official group from Ubisoft France, which brought together members of the Just Dance community from all over the world, giving exclusive access to content, news, etc.">
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card-pessoal" style="background-image: url('src/images/personal/gaga.jpg')"
+                    data-hover-image="url('src/images/personal/gaga-hover.jpg')">
+                    <div class="overlay"></div>
+                    <div class="conteudo-card">
+                        <h3 data-pt="De onde vem o <span>'Cake'</span>?"
+                            data-en="Where does <span>'Cake'</span> come from?">De onde vem o <span>'Cake'</span>?</h3>
+                        <p data-pt="Como um 'LittleMonster' obcecado por Lady Gaga, o apelido surgiu em 2012, com o vazamento de uma música entitulada 'Cake Like Lady Gaga'. Basicamente, achei legal, adotei como apelido, e pegou!"
+                            data-en="As a 'Little Monster' obsessed with Lady Gaga, the nickname came up in 2012 with the leak of a song titled 'Cake Like Lady Gaga'. Basically, I thought it was cool, adopted it as a nickname, and it stuck!">
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card-pessoal" style="background-image: url('src/images/personal/aviao.JPEG')"
+                    data-hover-image="url('src/images/personal/aviao-hover.jpg')">
+                    <div class="overlay"></div>
+                    <div class="conteudo-card">
+                        <h3 data-pt="Amor por <span>Aviação</span>" data-en="A love for <span>Aviation</span>">Amor por
+                            <span>Aviação</span></h3>
+                        <p data-pt="Apaixonado por aviação. Entendo alguma coisa? Não... mas acho fascinante um tubo de metal voar, apesar de ter asas e não bater elas!"
+                            data-en="Passionate about aviation. Do I understand anything about it? No... but I find it fascinating that a metal tube can fly, despite having wings and not flapping them!">
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card-pessoal" style="background-image: url('src/images/personal/carros.JPEG')"
+                    data-hover-image="url('src/images/personal/carros-hover.jpg')">
+                    <div class="overlay"></div>
+                    <div class="conteudo-card">
+                        <h3 data-pt="<span>Carros</span> e Adrenalina" data-en="<span>Cars</span> and Adrenaline">
+                            <span>Carros</span> e Adrenalina</h3>
+                        <p data-pt="Além dos ares, quando se trata em manter o pé no chão, veículos são minha paixão também. Lamborghini, Ferrari, Dodge, Hummer, etc... velocidade, luxo, tudo me agrada e arrepia!"
+                            data-en="Besides the skies, when it comes to keeping my feet on the ground, vehicles are also my passion. Lamborghini, Ferrari, Dodge, Hummer, etc... speed, luxury, it all pleases and thrills me!">
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card-pessoal" style="background-image: url('src/images/personal/livros.JPEG')"
+                    data-hover-image="url('src/images/personal/livros-hover.jpg')">
+                    <div class="overlay"></div>
+                    <div class="conteudo-card">
+                        <h3 data-pt="Uma <span>biblioteca</span> no quarto"
+                            data-en="A <span>library</span> in the bedroom">Uma <span>biblioteca</span> no quarto</h3>
+                        <p data-pt="Minha passagem pela atual maior rede de livrarias em território nacional me influenciou a ter um desejo árduo em leitura de ficção científica, suspense, horror, etc..."
+                            data-en="My time at the largest bookstore chain in the country influenced me to have a strong desire for reading science fiction, suspense, horror, etc...">
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card-pessoal" style="background-image: url('src/images/personal/jogos.JPEG')"
+                    data-hover-image="url('src/images/personal/jogos-hover.jpg')">
+                    <div class="overlay"></div>
+                    <div class="conteudo-card">
+                        <h3 data-pt="Vamos <span>Jogar</span>?" data-en="Let's <span>Play</span>?">Vamos
+                            <span>Jogar</span>?</h3>
+                        <p data-pt="Viciado em jogos também! Amante da PlayStation desde criança, e entrando aos poucos no mundo da Nintendo também."
+                            data-en="Addicted to games too! A PlayStation lover since I was a kid, and slowly getting into the world of Nintendo as well.">
+                        </p>
+                    </div>
+                </div>
             </div>
-
-            <!-- Grid dos outros projetos -->
-            <div class="projetos-grid">
-                <a href="https://github.com/EdisonCake/Estudos-AdvPL" target="_blank" rel="noopener noreferrer"
-                    class="pasta">
-                    <img src="https://icons.iconarchive.com/icons/papirus-team/papirus-places/128/folder-blue-git-icon.png"
-                        alt="Ícone Pasta" />
-                    <span>Estudos - AdvPL</span>
+            <div class="pessoal-links">
+                <a href="https://www.youtube.com/cakedancebr" target="_blank" class="pessoal-badge youtube"
+                    data-pt="Meu Canal no YouTube" data-en="My YouTube Channel">
+                    <img src="https://img.icons8.com/color/48/000000/youtube-play.png" alt="YouTube" /> Meu Canal no YouTube
                 </a>
-
-                <a href="https://github.com/EdisonCake/Estudos-C" target="_blank" rel="noopener noreferrer"
-                    class="pasta">
-                    <img src="https://icons.iconarchive.com/icons/papirus-team/papirus-places/128/folder-blue-git-icon.png"
-                        alt="Ícone Pasta" />
-                    <span>Estudos - C</span>
-                </a>
-
-                <a href="https://github.com/EdisonCake/Estudos-HTML-CSS-Javascript" target="_blank"
-                    rel="noopener noreferrer" class="pasta">
-                    <img src="https://icons.iconarchive.com/icons/papirus-team/papirus-places/128/folder-blue-git-icon.png"
-                        alt="Ícone Pasta" />
-                    <span>Estudos - HTML, CSS e JavaScript</span>
-                </a>
-
-                <a href="https://github.com/EdisonCake/Estudos-Python" target="_blank" rel="noopener noreferrer"
-                    class="pasta">
-                    <img src="https://icons.iconarchive.com/icons/papirus-team/papirus-places/128/folder-blue-git-icon.png"
-                        alt="Ícone Pasta" />
-                    <span>Estudos - Python</span>
-                </a>
-
-                <a href="https://edisoncake.github.io/projeto-clone-yu-gi-oh/" target="_blank" rel="noopener noreferrer"
-                    class="pasta">
-                    <img src="https://icons.iconarchive.com/icons/papirus-team/papirus-places/128/folder-blue-git-icon.png"
-                        alt="Ícone Pasta" />
-                    <span>Rocketseat - Yu-Gi-Oh!</span>
+                <a href="https://www.instagram.com/cakedancebr" target="_blank" class="pessoal-badge instagram"
+                    data-pt="Meu Instagram" data-en="My Instagram">
+                    <img src="https://img.icons8.com/color/48/000000/instagram-new.png" alt="Instagram" /> Meu Instagram
                 </a>
             </div>
         </section>
 
-        <section id="contato" class="aba">
-            <h2>Entre em Contato</h2>
-            <p>Quer bater um papo, colar num projeto ou me chamar pra alguma missão? Manda aí por onde for melhor pra
+        <section class="aba contato" id="contato">
+            <h2 data-pt="Entre em <span>Contato</span>" data-en="Get in <span>Touch</span>">Entre em
+                <span>Contato</span>
+            </h2>
+            <p data-pt="Quer bater um papo, colar num projeto ou me chamar pra alguma missão? Manda aí por onde for melhor pra você:"
+               data-en="Want to chat, join a project, or invite me for a mission? Contact me wherever is best for you:">
+                Quer bater um papo, colar num projeto ou me chamar pra alguma missão? Manda aí por onde for melhor pra
                 você:</p>
 
             <div class="contato-links">
                 <div class="badge-base LI-profile-badge" data-locale="pt_BR" data-size="large" data-theme="light"
-                    data-type="HORIZONTAL" data-vanity="edisonantonio" data-version="v1"><a
-                        class="badge-base__link LI-simple-link"
+                    data-type="HORIZONTAL" data-vanity="edisonantonio" data-version="v1">
+                    <a class="badge-base__link LI-simple-link"
                         href="https://br.linkedin.com/in/edisonantonio?trk=profile-badge"></a>
                 </div>
-
 
                 <a href="https://wa.me/5519984524900" target="_blank" class="contato-badge whatsapp">
                     <img src="https://cdn-icons-png.flaticon.com/512/174/174879.png" alt="WhatsApp" />
                     WhatsApp
                 </a>
-
 
                 <a href="https://github.com/EdisonCake" target="_blank" class="contato-badge github">
                     <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
@@ -212,116 +299,33 @@
                 </a>
             </div>
         </section>
-
-        <section id="pessoal" class="aba">
-            <h2>Conheça o Lado Pessoal do "Cake" 🎭🎶</h2>
-
-            <div class="cards-pessoais">
-
-                <!-- Cosplay -->
-                <div class="card-pessoal" style="background-image: url('src/images/personal/spider.JPEG')">
-                    <div class="overlay"></div>
-                    <div class="conteudo-card">
-                        <h3>Cosplayer de Miles Morales 🕷️</h3>
-                        <p>Nas horas vagas, sou cosplayer do Miles Morales. Essa paixão surgiu do nada, sempre estive
-                            nos meios de eventos de anime pela região, e sempre vi meus amigos se "transformando" em
-                            seus personagens favoritos. Agora, faço o mesmo.</p>
-                    </div>
-                </div>
-
-                <!-- Just Dance -->
-                <div class="card-pessoal" style="background-image: url('src/images/personal/stage.jpg')">
-                    <div class="overlay"></div>
-                    <div class="conteudo-card">
-                        <h3>Just Dance Squad</h3>
-                        <p>Já fui membro do "Just Dance Squad", antigo grupo oficial da Ubisoft França, na qual reunia
-                            membros da comunidade de Just Dance do mundo todo, dando acesso exclusivo à conteúdos,
-                            novidades, etc.</p>
-                    </div>
-                </div>
-
-                <!-- Lady Gaga -->
-                <div class="card-pessoal" style="background-image: url('src/images/personal/gaga.jpg')">
-                    <div class="overlay"></div>
-                    <div class="conteudo-card">
-                        <h3>De onde vem o "Cake"?</h3>
-                        <p>Como um "LittleMonster" obcecado por Lady Gaga, o apelido surgiu em 2012, com o vazamento de
-                            uma música entitulada "Cake Like Lady Gaga". Basicamente, achei legal, adotei como apelido,
-                            e pegou!</p>
-                    </div>
-                </div>
-
-                <!-- Aviação -->
-                <div class="card-pessoal" style="background-image: url('src/images/personal/aviao.JPEG')">
-                    <div class="overlay"></div>
-                    <div class="conteudo-card">
-                        <h3>Amor por Aviação</h3>
-                        <p>Apaixonado por aviação. Entendo alguma coisa? Não... mas acho fascinante um tubo de metal
-                            voar, apesar de ter asas e não bater elas!</p>
-                    </div>
-                </div>
-
-                <!-- Carros -->
-                <div class="card-pessoal" style="background-image: url('src/images/personal/carros.JPEG')">
-                    <div class="overlay"></div>
-                    <div class="conteudo-card">
-                        <h3>Carros e Adrenalina</h3>
-                        <p>Além dos ares, quando se trata em manter o pé no chão, veículos são minha paixão também.
-                            Lamborghini, Ferrari, Dodge, Hummer, etc... velocidade, luxo, tudo me agrada e arrepia!
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Livros -->
-                <div class="card-pessoal" style="background-image: url('src/images/personal/livros.JPEG')">
-                    <div class="overlay"></div>
-                    <div class="conteudo-card">
-                        <h3>Livros</h3>
-                        <p>Minha passagem pela atual maior rede de livrarias em território nacional me influenciou a ter
-                            um desejo árduo em leitura de ficção científica, suspense, horror, etc...</p>
-                    </div>
-                </div>
-
-                <!-- Jogos -->
-                <div class="card-pessoal" style="background-image: url('src/images/personal/jogos.JPEG')">
-                    <div class="overlay"></div>
-                    <div class="conteudo-card">
-                        <h3>Vamos Jogar?</h3>
-                        <p>Viciado em jogos também! Amante da PlayStation desde criança, e entrando aos poucos no mundo
-                            da Nintendo também.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="pessoal-links">
-                <a href="https://www.youtube.com/cakedancebr" target="_blank" class="pessoal-badge youtube">
-                    <img src="https://img.icons8.com/color/48/000000/youtube-play.png" alt="YouTube" />
-                    Meu Canal no YouTube
-                </a>
-
-                <a href="https://www.instagram.com/cakedancebr" target="_blank" class="pessoal-badge instagram">
-                    <img src="https://img.icons8.com/color/48/000000/instagram-new.png" alt="Instagram" />
-                    Meu Instagram
-                </a>
-            </div>
-        </section>
     </main>
 
-    <footer id="badges">
-        <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"
-            alt="HTML5 Logo" />
-        <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"
-            alt="CSS Logo" />
-        <img src="https://img.shields.io/badge/Python-14354C?style=for-the-badge&logo=python&logoColor=white"
-            alt="Python Logo" />
-        <img src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white" alt="C Logo" />
-        <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white"
-            alt="Java Logo" />
-        <img src="https://img.shields.io/badge/AdvPL-003366?style=for-the-badge&logoColor=white" alt="AdvPL Logo" />
+    <footer class="footer">
+        <div class="footer-left" id="badges">
+            <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"
+                alt="HTML5 Logo">
+            <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"
+                alt="CSS Logo">
+            <img src="https://img.shields.io/badge/Python-14354C?style=for-the-badge&logo=python&logoColor=white"
+                alt="Python Logo">
+            <img src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white" alt="C Logo">
+            <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white"
+                alt="Java Logo">
+            <img src="https://img.shields.io/badge/AdvPL-003366?style=for-the-badge&logoColor=white" alt="AdvPL Logo">
+        </div>
+        <div class="footer-center" data-pt="&copy; 2025 Edison Cake" data-en="&copy; 2025 Edison Cake">
+            &copy; 2025 Edison Cake
+        </div>
+        <div class="footer-right">
+            <select id="languageSelector">
+                <option value="pt">Português</option>
+                <option value="en">English</option>
+            </select>
+        </div>
     </footer>
 
     <script src="script.js"></script>
-    <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
 </body>
 
 </html>
